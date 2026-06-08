@@ -1,0 +1,26 @@
+[
+  {
+    "learner_id": "L-1001",
+    "role": "Cloud Engineer",
+    "certification": "AI-102",
+    "practice_score_avg": 67,
+    "hours_studied": 18,
+    "exam_outcome": "Not Ready"
+  },
+  {
+    "learner_id": "L-1002",
+    "role": "DevOps Engineer",
+    "certification": "AZ-400",
+    "practice_score_avg": 82,
+    "hours_studied": 24,
+    "exam_outcome": "Ready"
+  },
+  {
+    "learner_id": "L-1003",
+    "role": "Data Analyst",
+    "certification": "DP-203",
+    "practice_score_avg": 74,
+    "hours_studied": 20,
+    "exam_outcome": "Almost Ready"
+  }
+]

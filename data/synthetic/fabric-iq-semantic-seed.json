@@ -1,0 +1,37 @@
+{
+  "certifications": [
+    {
+      "id": "AI-102",
+      "skills": [
+        "Azure AI Services",
+        "Responsible AI",
+        "RAG",
+        "Azure AI Search"
+      ],
+      "recommended_hours": 32,
+      "readiness_threshold": 75
+    },
+    {
+      "id": "AZ-400",
+      "skills": [
+        "CI/CD",
+        "GitHub Actions",
+        "Monitoring",
+        "DevOps Governance"
+      ],
+      "recommended_hours": 25,
+      "readiness_threshold": 75
+    },
+    {
+      "id": "DP-203",
+      "skills": [
+        "Data Engineering",
+        "Data Lake",
+        "Pipelines",
+        "Spark"
+      ],
+      "recommended_hours": 30,
+      "readiness_threshold": 75
+    }
+  ]
+}

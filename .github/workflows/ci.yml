@@ -1,0 +1,19 @@
+name: basic-checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repository structure check
+        run: |
+          test -f README.md
+          test -d agents
+          test -d workflow
+          test -d docs
