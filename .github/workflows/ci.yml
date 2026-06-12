@@ -1,19 +1,19 @@
-name: basic-checks
+name: CI
 
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
 
 jobs:
-  validate:
+  validate-repository:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Repository structure check
+      - name: Validate required folders
         run: |
-          test -f README.md
           test -d agents
           test -d workflow
+          test -d knowledge-base
+          test -d demo
           test -d docs
+          test -f README.md

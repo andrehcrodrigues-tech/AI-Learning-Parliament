@@ -1,0 +1,14 @@
+[
+  {
+    "learner_id": "L-1001",
+    "completed_topics": [
+      "Azure Fundamentals",
+      "Azure AI Services"
+    ],
+    "weak_topics": [
+      "AI Agents",
+      "Advanced RAG"
+    ],
+    "last_assessment_score": 82
+  }
+]

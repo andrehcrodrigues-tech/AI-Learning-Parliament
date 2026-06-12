@@ -1,0 +1,16 @@
+{
+  "Infrastructure Project Manager": [
+    "AI Transformation Lead",
+    "AI Program Manager",
+    "Cloud Delivery Lead"
+  ],
+  "Data Product Owner": [
+    "AI Product Lead",
+    "AI Transformation Lead",
+    "Data Platform Product Lead"
+  ],
+  "Senior Network Engineer": [
+    "Principal Network Architect",
+    "Network Security Architect"
+  ]
+}

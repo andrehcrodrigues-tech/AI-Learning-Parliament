@@ -1,144 +1,101 @@
 # AI Learning Parliament
 
-**A multi-agent governance system for certification readiness and enterprise learning decisions.**
+AI Learning Parliament is a multi-agent reasoning system for certification readiness and enterprise learning decisions.
 
-AI Learning Parliament helps organisations recommend realistic and responsible certification journeys by balancing learner goals, business priorities, workload capacity, skills demand, assessment readiness, and compliance constraints.
+The solution uses Microsoft Foundry Agents, Foundry Workflows and a curated Knowledge Base to produce transparent, evidence-based certification recommendations.
 
-The solution was designed for the **AI Skills Fest 2026 - Agents League Hackathon**, Track: **Reasoning Agents with Microsoft Foundry**.
+## Purpose
 
----
+Enterprise learning decisions are often too generic. They usually ignore:
 
-## Problem
+- learner career goals
+- certification readiness
+- available study capacity
+- manager and team priorities
+- future skill relevance
+- operational delivery risk
 
-Enterprise learning programmes often fail because certification decisions are made from a single perspective:
+AI Learning Parliament solves this through a structured multi-agent decision process.
 
-- learners want career growth;
-- managers need team readiness;
-- organisations need business value;
-- certification teams need compliance;
-- employees have limited work capacity.
+## Final Architecture
 
-AI Learning Parliament turns certification planning into a multi-agent reasoning process.
-
----
-
-## Solution
-
-The system uses specialised agents that debate the best certification path and produce a final **Certification Readiness Report**.
-
-### Agents
-
-1. **Learning Curator Agent** — maps role and target certification to grounded learning content.
-2. **Study Plan Agent** — converts content into a practical study schedule.
-3. **Workload Agent** — checks workload, meeting load and available focus time.
-4. **Assessment Agent** — evaluates readiness and learning gaps.
-5. **Manager Agent** — represents team capacity and operational needs.
-6. **Business Value Agent** — evaluates ROI and organisational value.
-7. **Career Growth Agent** — represents learner aspirations and career progression.
-8. **Future Skills Agent** — assesses future relevance of skills.
-9. **Critic Agent** — challenges assumptions and identifies contradictions.
-10. **Speaker Agent** — synthesises all perspectives into a final decision report.
-
----
-
-## Microsoft Technologies
-
-- Microsoft Foundry
-- Foundry Agents
-- Foundry Workflows
-- Foundry IQ
-- Azure AI Search
-- Azure OpenAI / GPT models
-- Optional: Microsoft Learn MCP Server
-- Optional: Work IQ-style synthetic work signals
-- Optional: Fabric IQ-style semantic model
-
----
-
-## Architecture
-
-```mermaid
-flowchart LR
-    U[User / Manager / Learner] --> I[Input Profile]
-    I --> W[Microsoft Foundry Workflow]
-
-    W --> LC[Learning Curator Agent]
-    W --> SP[Study Plan Agent]
-    W --> WL[Workload Agent]
-    W --> AS[Assessment Agent]
-    W --> MA[Manager Agent]
-    W --> BV[Business Value Agent]
-    W --> CG[Career Growth Agent]
-    W --> FS[Future Skills Agent]
-
-    LC --> C[Critic Agent]
-    SP --> C
-    WL --> C
-    AS --> C
-    MA --> C
-    BV --> C
-    CG --> C
-    FS --> C
-
-    C --> S[Speaker Agent]
-    S --> R[Certification Readiness Report]
-
-    FIQ[Foundry IQ Knowledge Base] --> LC
-    FIQ --> AS
-    FIQ --> SP
-
-    WIQ[Synthetic Work IQ Signals] --> WL
-    FAB[Fabric IQ-style Semantic Model] --> BV
-    FAB --> MA
-    FAB --> FS
-```
-
----
-
-## Demo Input Example
+The current architecture uses five stakeholder agents, followed by a Critic Agent and a Speaker Agent.
 
 ```text
-Role: Cloud Engineer
-Target Certification: AI-102
-Current Skills: Azure basics, Python, API development
-Available Study Hours: 4 hours/week
-Workload: 21 meeting hours/week, 8 focus hours/week
-Career Goal: Move into AI Engineering
-Team Goal: Increase GenAI delivery capability within 3 months
+Manager-Agent
+Career-Growth-Agent
+Readiness-Agent
+Capacity-Agent
+Future-Skills-Agent
+        ↓
+Critic-Agent
+        ↓
+Speaker-Agent
 ```
 
----
+## Agents
 
-## Expected Output
+### Manager-Agent
+Evaluates manager goals, team capability, delivery impact, operational risk and short-term execution feasibility.
 
-- Recommended certification
-- Readiness score
-- Consensus score
-- Study plan
-- Risk analysis
-- Manager insights
-- Critic validation
-- Next steps
+### Career-Growth-Agent
+Evaluates career progression, target role alignment and whether the certification supports the learner's professional growth.
 
----
+### Readiness-Agent
+Evaluates certification readiness, practice score thresholds, weak areas and exam preparedness.
 
-## Responsible AI
+### Capacity-Agent
+Evaluates study hours, meeting load, workload risk and whether a realistic study effort is feasible.
 
-This project uses only synthetic data and synthetic documents. No real employee data, customer data, credentials, confidential information or PII should be included.
+### Future-Skills-Agent
+Evaluates whether the certification develops skills that remain strategically relevant over the next 3 to 5 years.
 
-See [`docs/responsible-ai.md`](docs/responsible-ai.md).
+### Critic-Agent
+Validates stakeholder consistency, evidence quality, contradictions, risks and whether the recommendation should proceed, be revised or blocked.
 
----
+### Speaker-Agent
+Synthesizes stakeholder outputs and Critic validation into the final AI Learning Parliament Decision.
+
+## Key Differentiators
+
+- Multi-perspective evaluation
+- Evidence-based decisions
+- Agent-specific knowledge grounding
+- Explainable final recommendation
+- Critic validation before final decision
+- Scalable to additional certifications and career paths
 
 ## Repository Structure
 
 ```text
-architecture/       Architecture diagrams and Mermaid flows
-agents/             Agent prompts and responsibilities
+agents/             Final prompt instructions for each agent
 workflow/           Microsoft Foundry workflow YAML
-demo/               Sample inputs and outputs
-docs/               Business, technical and responsible AI documentation
-data/synthetic/     Synthetic datasets and demo documents
-src/                Optional Python/Streamlit wrapper
-screenshots/        Foundry and demo screenshots
+knowledge-base/     Agent-specific KB source documents
+architecture/       Architecture diagram and explanation
+demo/               Demo prompts and expected outcomes
+docs/               Supporting documentation
+data/synthetic/     Synthetic datasets used for demo only
+.github/workflows/  Basic CI validation
 ```
+
+## Demo Scenarios
+
+The demo includes three validation scenarios:
+
+1. Favourable candidate → expected decision: Start Now
+2. Unfavourable candidate → expected decision: Delay
+3. Misaligned career path → expected decision: Delay or Alternative Certification
+
+## Responsible AI
+
+This project uses synthetic examples and synthetic learning/workload data only. Do not upload real employee data, confidential information, credentials or personal identifiable information.
+
+## Technologies
+
+- Microsoft Foundry
+- Foundry Agents
+- Foundry Workflows
+- Foundry IQ / Knowledge Base
+- Azure Blob Storage
+- Azure AI Search
+- Azure OpenAI / GPT models
