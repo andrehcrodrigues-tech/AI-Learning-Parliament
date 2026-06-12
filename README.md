@@ -97,7 +97,7 @@ The architecture combines:
 
 The orchestration layer is implemented using Azure AI Foundry Workflows.
 
-![Workflow](docs/screenshots/workflow.png)
+![Workflow](docs/Screenshots/ai_learning_parliament_workflow.png)
 
 ## Workflow Steps
 
@@ -120,13 +120,13 @@ The platform uses Foundry IQ as its primary source of truth.
 
 Synthetic enterprise datasets and certification knowledge.
 
-![Blob Storage](docs/screenshots/blob-storage.png)
+![Blob Storage](docs/Screenshots/ai_learning_parliament_foundry_iq_kb_blob_storage.png)
 
 ### Foundry IQ Knowledge Base
 
 Grounded retrieval and reasoning.
 
-![Knowledge Base](docs/screenshots/foundry-kb.png)
+![Knowledge Base](docs/Screenshots/ai_learning_parliament_kb.png)
 
 Knowledge includes:
 
@@ -161,7 +161,7 @@ Knowledge includes:
 
 Evaluates certification readiness using assessment evidence and certification requirements.
 
-![Readiness Agent](docs/screenshots/readiness-agent.png)
+![Readiness Agent](docs/Screenshots/readiness_agent.png)
 
 ---
 
@@ -169,7 +169,7 @@ Evaluates certification readiness using assessment evidence and certification re
 
 Evaluates long-term market relevance and strategic value.
 
-![Future Skills Agent](docs/screenshots/future-skills-agent.png)
+![Future Skills Agent](docs/Screenshots/future_skills_agent.png)
 
 ---
 
@@ -177,7 +177,7 @@ Evaluates long-term market relevance and strategic value.
 
 Validates stakeholder reasoning and identifies contradictions.
 
-![Critic Agent](docs/screenshots/critic-agent.png)
+![Critic Agent](docs/Screenshots/critic_agent.png)
 
 ### Responsibilities
 
@@ -192,7 +192,7 @@ Validates stakeholder reasoning and identifies contradictions.
 
 Produces the final executive decision report.
 
-![Speaker Agent](docs/screenshots/speaker-agent.png)
+![Speaker Agent](docs/Screenshots/speaker_agent.png)
 
 The Speaker Agent provides:
 
@@ -212,7 +212,7 @@ A core design principle of the platform is that AI recommendations are never aut
 
 Human approval is required before learning plans are generated.
 
-![Human Approval](docs/screenshots/human-approval.png)
+![Human Approval](docs/Screenshots/human_approval.png)
 
 This creates a governance layer suitable for enterprise environments.
 
@@ -237,7 +237,7 @@ Final Decision:
 
 **Start Now**
 
-![Positive Scenario](docs/screenshots/positive-case.png)
+![Positive Scenario](docs/Screenshots/Positive_outcome.png)
 
 ---
 
@@ -261,7 +261,7 @@ Final Decision:
 
 **Start with Conditions** or **Delay**
 
-![Risk Scenario](docs/screenshots/risk-case.png)
+![Risk Scenario](docs/Screenshots/risk_case.png)
 
 ---
 
@@ -274,7 +274,7 @@ Each agent contains:
 * Evidence retrieval rules
 * Output constraints
 
-![Agent Configuration](docs/screenshots/agent-config.png)
+![Agent Configuration](docs/Screenshots/agent_config.png)
 
 This ensures:
 
