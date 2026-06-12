@@ -5,46 +5,76 @@ flowchart LR
     U[User / Learner / Manager] --> P[Certification Request]
     P --> WF[Microsoft Foundry Workflow]
 
-    subgraph Agents[AI Learning Parliament Agents]
-        LC[Learning Curator]
-        SP[Study Plan]
-        WL[Workload]
-        AS[Assessment]
-        MA[Manager]
-        BV[Business Value]
-        CG[Career Growth]
-        FS[Future Skills]
-        CR[Critic]
-        SK[Speaker]
+    subgraph Agents[AI Learning Parliament - Stakeholder Agents]
+        MA[Manager Agent]
+        CG[Career Growth Agent]
+        RA[Readiness Agent]
+        CA[Capacity Agent]
+        FS[Future Skills Agent]
     end
 
-    WF --> LC
-    WF --> SP
-    WF --> WL
-    WF --> AS
     WF --> MA
-    WF --> BV
     WF --> CG
+    WF --> RA
+    WF --> CA
     WF --> FS
 
-    LC --> CR
-    SP --> CR
-    WL --> CR
-    AS --> CR
-    MA --> CR
-    BV --> CR
+    MA --> CR[Critic Agent]
     CG --> CR
+    RA --> CR
+    CA --> CR
     FS --> CR
 
-    CR --> SK
-    SK --> OUT[Certification Readiness Report]
+    CR --> SP[Speaker Agent]
+    SP --> OUT[Certification Decision Report]
 
-    FIQ[Foundry IQ Knowledge Base] --> LC
-    FIQ --> AS
-    FIQ --> SP
+    subgraph KB[Agent-Specific Knowledge Base]
+        MF[manager-framework.md]
+        MG[manager-goals-ai-delivery.md]
 
-    WIQ[Synthetic Work IQ Signals] --> WL
-    FAB[Fabric IQ-style Semantic Model] --> MA
-    FAB --> BV
-    FAB --> FS
+        CF[career-growth-framework.md]
+        RM[certification-role-mapping.md]
+
+        RF[readiness-framework.md]
+        AI[ai102-overview.md]
+        A900[ai900.md]
+        DP900[dp900.md]
+        DP700[dp700.md]
+
+        CPF[capacity-framework.md]
+        SH[study-hours-guidance.md]
+        WR[workload-risk-framework.md]
+
+        FSF[future-skills-analysis.md]
+
+        LJ[learners.json]
+        LH[learning_history.json]
+    end
+
+    MF --> MA
+    MG --> MA
+    LJ --> MA
+    LH --> MA
+
+    CF --> CG
+    RM --> CG
+    LJ --> CG
+    LH --> CG
+
+    RF --> RA
+    AI --> RA
+    A900 --> RA
+    DP900 --> RA
+    DP700 --> RA
+    LJ --> RA
+    LH --> RA
+
+    CPF --> CA
+    SH --> CA
+    WR --> CA
+    LJ --> CA
+    LH --> CA
+
+    FSF --> FS
+    RM --> FS
 ```
