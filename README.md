@@ -2,7 +2,7 @@
 
 ## Multi-Agent AI System for Evidence-Based Certification Decisions
 
-![Architecture](docs/screenshots/architecture.png)
+![Architecture](docs/Screenshots/Architecture_AI_Parliament.png)
 
 ---
 
@@ -52,7 +52,7 @@ The platform produces explainable recommendations supported by evidence and stak
 
 ## High-Level Architecture
 
-![Architecture](docs/screenshots/architecture.png)
+![Architecture](docs/Screenshots/Architecture_AI_Parliament.png)
 
 The architecture combines:
 
